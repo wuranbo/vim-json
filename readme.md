@@ -1,16 +1,16 @@
-VIM JSON
-========
+Beter JSON for VIM
+==================
 
 Customization on Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945)
 
 [Pathogen-friendly.](https://github.com/tpope/vim-pathogen)
 
-Specific modifications:
+Specific customizations
 -----------------------
 
-Added syntax highlighting warning for decimals smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
-Added syntax highlighting warning for comments and semicolons.
-Added distinct highlighting for keywords.
+* Added distinct highlighting for keywords! (This is what made me start this plugin.)
+* Added syntax highlighting warning for decimals smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
+* Added syntax highlighting warning for comments and semicolons.
 
 
 Why use separate JSON highlighting instead of just Javascript?
