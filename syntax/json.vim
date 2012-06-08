@@ -19,7 +19,7 @@ if !exists("main_syntax")
 endif
 
 " Syntax: Strings {{{2
-syn region  jsonString    start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=jsonEscape
+syn region  jsonString    start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=jsonEscape,jsonKeyword
 " Syntax: JSON does not allow strings with single quotes, unlike JavaScript.
 syn region  jsonStringSQ  start=+'+  skip=+\\\\\|\\"+  end=+'+
 
@@ -35,6 +35,18 @@ syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)
 
 " Syntax: An integer part of 0 followed by other digits is not allowed.
 syn match   jsonNumError  "-\=\<0\d\.\d*\>"
+" Syntax: Decimals smaller than one should begin with 0 (so .1 should be 0.1).
+syn match   jsonNumError  "\:\zs\D*\.\ze\d\+\>"
+
+" Syntax: 
+syn match  jsonKeyword   /"[^"]\+"\ze:/
+
+" Syntax: No comments in JSON, see http://stackoverflow.com/questions/244777/can-i-comment-a-json-file 
+syn match   jsonCommentError  "//.*"
+syn match   jsonCommentError  "\(/\*\)\|\(\*/\)"
+
+" Syntax: No semicolons in JSON
+syn match   jsonSemicolonError  ";"
 
 " Syntax: Boolean {{{2
 syn keyword jsonBoolean   true false
@@ -61,8 +73,11 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonBraces		Operator
   HiLink jsonNull		Function
   HiLink jsonBoolean		Boolean
+  HiLink jsonKeyword            Label
 
   HiLink jsonNumError           Error
+  HiLink jsonCommentError       Error
+  HiLink jsonSemicolonError     Error
   HiLink jsonStringSQ           Error
   HiLink jsonNoQuotes           Error
   delcommand HiLink
