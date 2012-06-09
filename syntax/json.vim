@@ -1,13 +1,8 @@
 " Vim syntax file
 " Language:	JSON
-" Maintainer:	Jeroen Ruigrok van der Werven <asmodai@in-nomine.org>
-" Last Change:	2009-06-16
-" Version:      0.4
-" {{{1
-
-" Syntax setup {{{2
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
+" Maintainer:	Eli Parra <eli@elzr.com>
+" Last Change:	2012-06-09
+" Version:      0.1
 
 if !exists("main_syntax")
   if version < 600
@@ -18,10 +13,17 @@ if !exists("main_syntax")
   let main_syntax = 'json'
 endif
 
+" NOTE that for the concealing to work your conceallevel should be set to 2
+
 " Syntax: Strings {{{2
-syn region  jsonString    start=+"+  skip=+\\\\\|\\"+  end=+"+  contains=jsonEscape,jsonKeyword
+syn region  jsonString oneline matchgroup=Quote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape
 " Syntax: JSON does not allow strings with single quotes, unlike JavaScript.
-syn region  jsonStringSQ  start=+'+  skip=+\\\\\|\\"+  end=+'+
+syn region  jsonStringSQ oneline  start=+'+  skip=+\\\\\|\\"+  end=+'+
+
+" Syntax: JSON Keywords
+" Separated into a match and region because a region by itself is always greedy
+syn match jsonKeywordMatch /"[^\"\:]\+"\:/ contains=jsonKeywordRegion
+syn region jsonKeywordRegion matchgroup=Quote start=/"/  end=/"\ze\:/ concealends contained
 
 " Syntax: Escape sequences {{{3
 syn match   jsonEscape    "\\["\\/bfnrt]" contained
@@ -37,9 +39,6 @@ syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)
 syn match   jsonNumError  "-\=\<0\d\.\d*\>"
 " Syntax: Decimals smaller than one should begin with 0 (so .1 should be 0.1).
 syn match   jsonNumError  "\:\zs\D*\.\ze\d\+\>"
-
-" Syntax: 
-syn match  jsonKeyword   /"[^"]\+"\ze:/
 
 " Syntax: No comments in JSON, see http://stackoverflow.com/questions/244777/can-i-comment-a-json-file 
 syn match   jsonCommentError  "//.*"
@@ -73,7 +72,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonBraces		Operator
   HiLink jsonNull		Function
   HiLink jsonBoolean		Boolean
-  HiLink jsonKeyword            Label
+  HiLink jsonKeywordRegion      Label
 
   HiLink jsonNumError           Error
   HiLink jsonCommentError       Error

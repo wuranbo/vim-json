@@ -11,6 +11,7 @@ Specific customizations
 * Added distinct highlighting for keywords! (This is what made me start this plugin.)
 * Added syntax highlighting warning for decimals smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
 * Added syntax highlighting warning for comments and semicolons.
+* Added concealing of double quotes, for a minimalist CoffeScript-inspired look (requires Vim 7.3+ and setting conceallevel to 2).
 
 
 Why use separate JSON highlighting instead of just Javascript?
