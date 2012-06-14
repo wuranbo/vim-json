@@ -13,6 +13,18 @@ Specific customizations
 * Added syntax highlighting warning for comments and semicolons.
 * Added concealing of double quotes, for a minimalist CoffeScript-inspired look (requires Vim 7.3+ and setting conceallevel to 2).
 
+Screenshots
+-----------
+
+**No syntax coloring**: wall of text.
+![No syntax coloring](http://farm8.staticflickr.com/7085/7370791592_24e418869b_o.jpg)
+
+**Javascript (or for that matter, json.vim) syntax coloring**: Not much improvement from no syntax coloring.
+![Javascript syntax coloring](http://farm8.staticflickr.com/7076/7370791528_3dcd4e5593_o.jpg)
+
+**Better JSON syntax coloring**: a more meaningful, distinct and elegant presentation.
+![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_b9ed8d0ce6_o.jpg)
+
 
 Why use separate JSON highlighting instead of just Javascript?
 --------------------------------------------------------------
