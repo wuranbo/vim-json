@@ -1,8 +1,7 @@
 Better JSON for VIM
 ==================
 
-Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945)
-
+Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945).
 [Pathogen-friendly.](https://github.com/tpope/vim-pathogen)
 
 Specific customizations
@@ -11,21 +10,20 @@ Specific customizations
 * Added distinct highlighting for keywords! (This is what made me start this plugin.)
 * Added syntax highlighting warning for decimals smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
 * Added syntax highlighting warning for comments and semicolons.
-* Added concealing of double quotes, for a minimalist CoffeScript-inspired look (requires Vim 7.3+ and setting conceallevel to 2).
-* Added folding of `{...}` and `[...]` blocks. The folding can be enabled via `:setlocal foldmethod=syntax` in a corresponding `ftplugin/json.vim` file.
+* Added concealing of double quotes, for a minimalist CoffeScript-inspired look. Requires Vim 7.3+. To disable it `:setlocal conceallevel=0` (do it permanently on the `ftplugin/json.vim` file).
+* Added folding of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
 
 Screenshots
 -----------
 
 **No syntax coloring**: wall of text.
-![No syntax coloring](http://farm8.staticflickr.com/7085/7370791592_24e418869b_o.jpg)
+![No syntax coloring](http://farm8.staticflickr.com/7085/7370791592_fe85355c89.jpg)
 
 **Javascript (or for that matter, json.vim) syntax coloring**: Not much improvement from no syntax coloring.
-![Javascript syntax coloring](http://farm8.staticflickr.com/7076/7370791528_3dcd4e5593_o.jpg)
+![Javascript syntax coloring](http://farm8.staticflickr.com/7076/7370791528_664eb2da6d.jpg)
 
 **Better JSON syntax coloring**: a more meaningful, distinct and elegant presentation.
-![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_b9ed8d0ce6_o.jpg)
-
+![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)
 
 Why use separate JSON highlighting instead of just Javascript?
 --------------------------------------------------------------
