@@ -16,14 +16,11 @@ Specific customizations
 Screenshots
 -----------
 
-**No syntax coloring**: wall of text.
-![No syntax coloring](http://farm8.staticflickr.com/7085/7370791592_fe85355c89.jpg)
+**No syntax coloring**: wall of text.<br>![No syntax coloring](http://farm8.staticflickr.com/7085/7370791592_fe85355c89.jpg)
 
-**Javascript (or for that matter, json.vim) syntax coloring**: Not much improvement from no syntax coloring.
-![Javascript syntax coloring](http://farm8.staticflickr.com/7076/7370791528_664eb2da6d.jpg)
+**Javascript (or for that matter, json.vim) syntax coloring**: Not much improvement from no syntax coloring.<br>![Javascript syntax coloring](http://farm8.staticflickr.com/7076/7370791528_664eb2da6d.jpg)
 
-**Better JSON syntax coloring**: a more meaningful, distinct and elegant presentation.
-![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)
+**Better JSON syntax coloring**: a more meaningful, distinct and elegant presentation.<br>![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)
 
 Why use separate JSON highlighting instead of just Javascript?
 --------------------------------------------------------------
