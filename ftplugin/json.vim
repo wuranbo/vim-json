@@ -1,3 +1,5 @@
 "uncomment to enable folding of `{...}` and `[...]` blocks
 "setlocal foldmethod=syntax
-setlocal conceallevel=2
+if has('conceal')
+	setlocal conceallevel=2
+endif

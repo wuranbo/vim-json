@@ -16,7 +16,11 @@ endif
 " NOTE that for the concealing to work your conceallevel should be set to 2
 
 " Syntax: Strings
-syn region  jsonString oneline matchgroup=Quote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape
+if has('conceal')
+   syn region  jsonString oneline matchgroup=Quote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape
+else
+   syn region  jsonString oneline matchgroup=Quote start=/"/  skip=/\\\\\|\\"/  end=/"/ contains=jsonEscape
+endif
 
 " Syntax: JSON does not allow strings with single quotes, unlike JavaScript.
 syn region  jsonStringSQ oneline  start=+'+  skip=+\\\\\|\\"+  end=+'+
@@ -24,7 +28,11 @@ syn region  jsonStringSQ oneline  start=+'+  skip=+\\\\\|\\"+  end=+'+
 " Syntax: JSON Keywords
 " Separated into a match and region because a region by itself is always greedy
 syn match jsonKeywordMatch /"[^\"\:]\+"\:/ contains=jsonKeywordRegion
-syn region jsonKeywordRegion matchgroup=Quote start=/"/  end=/"\ze\:/ concealends contained
+if has('conceal')
+   syn region jsonKeywordRegion matchgroup=Quote start=/"/  end=/"\ze\:/ concealends contained
+else
+   syn region jsonKeywordRegion matchgroup=Quote start=/"/  end=/"\ze\:/ contained
+endif
 
 " Syntax: Escape sequences
 syn match   jsonEscape    "\\["\\/bfnrt]" contained
