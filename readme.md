@@ -14,6 +14,7 @@ Specific customizations
 * **JSON-specific Warnings:**
 	* Warn about *decimals* smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
 	* Warn about *comments* and *trailing semicolons*.
+	* Warn about *trailing commas* after the last element of arrays or objects.
 
 Screenshots
 -----------

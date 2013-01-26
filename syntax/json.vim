@@ -44,6 +44,8 @@ syn match   jsonNoQuotes  "\<\a\+\>"
 " Syntax: Numbers
 syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)\=\>"
 
+" ERROR WARNINGS **********************************************
+"
 " Syntax: An integer part of 0 followed by other digits is not allowed.
 syn match   jsonNumError  "-\=\<0\d\.\d*\>"
 
@@ -56,6 +58,11 @@ syn match   jsonCommentError  "\(/\*\)\|\(\*/\)"
 
 " Syntax: No semicolons in JSON
 syn match   jsonSemicolonError  ";"
+
+" Syntax: No trailing comma after the last element of arrays or objects
+syn match   jsonCommaError  ",\_s*[}\]]"
+
+" ********************************************** END OF ERROR WARNINGS
 
 " Syntax: Boolean
 syn keyword jsonBoolean   true false
@@ -88,6 +95,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonNumError           Error
   HiLink jsonCommentError       Error
   HiLink jsonSemicolonError     Error
+  HiLink jsonCommaError     	Error
   HiLink jsonStringSQ           Error
   HiLink jsonNoQuotes           Error
   delcommand HiLink
