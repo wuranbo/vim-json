@@ -7,12 +7,13 @@ Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](
 Specific customizations
 -----------------------
 
-* Added distinct highlighting for keywords! (This is what made me start this plugin.)
-* Added syntax highlighting warning for decimals smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
-* Added syntax highlighting warning for comments and semicolons.
-* Added folding of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
-* Added concealing of double quotes, for a minimalist CoffeScript-inspired look. 
-	* **This requires Vim 7.3+.** To disable it `:setlocal conceallevel=0` (do it permanently on the `ftplugin/json.vim` file). 
+* Added distinct **highlighting** for keywords! (This is what made me start this plugin.)
+* Added **concealing** of double quotes, for a minimalist [CoffeScript](http://coffeescript.org/)-inspired look. 
+	* *This requires Vim 7.3+.* To disable it `:setlocal conceallevel=0` (do it permanently on the `ftplugin/json.vim` file). 
+* Added **folding** of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
+* **JSON-specific Warnings:**
+	* Warn about *decimals* smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
+	* Warn about *comments* and *trailing semicolons*.
 
 Screenshots
 -----------
