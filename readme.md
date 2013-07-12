@@ -10,7 +10,7 @@ Specific customizations
 
 * Added distinct **highlighting** for keywords! (This is what made me start this plugin.)
 * Added **concealing** of double quotes, for a minimalist [CoffeScript](http://coffeescript.org/)-inspired look. 
-	* *This requires Vim 7.3+.* To disable it `:setlocal conceallevel=0` (do it permanently on the `ftplugin/json.vim` file). 
+	* *This requires Vim 7.3+.* To disable it add `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
 * Added **folding** of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
 * **JSON-specific Warnings:**
 	* Warn about *decimals* smaller than 1 that don't start with a 0 (so .1 gives a warning, it should be 0.1).
