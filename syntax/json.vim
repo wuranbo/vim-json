@@ -84,20 +84,20 @@ if version >= 508 || !exists("did_json_syn_inits")
   else
     command -nargs=+ HiLink hi def link <args>
   endif
-  HiLink jsonString             String
-  HiLink jsonEscape             Special
-  HiLink jsonNumber		Number
-  HiLink jsonBraces		Operator
-  HiLink jsonNull		Function
-  HiLink jsonBoolean		Boolean
-  HiLink jsonKeywordRegion      Label
+  HiLink jsonString				String
+  HiLink jsonEscape				Special
+  HiLink jsonNumber				Number
+  HiLink jsonBraces				Operator
+  HiLink jsonNull					Function
+  HiLink jsonBoolean				Boolean
+  HiLink jsonKeywordRegion		Label
 
-  HiLink jsonNumError           Error
-  HiLink jsonCommentError       Error
-  HiLink jsonSemicolonError     Error
-  HiLink jsonCommaError     	Error
-  HiLink jsonStringSQ           Error
-  HiLink jsonNoQuotes           Error
+  HiLink jsonNumError			Error
+  HiLink jsonCommentError		Error
+  HiLink jsonSemicolonError	Error
+  HiLink jsonCommaError			Error
+  HiLink jsonStringSQ			Error
+  HiLink jsonNoQuotes			Error
   delcommand HiLink
 endif
 
