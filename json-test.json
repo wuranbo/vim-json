@@ -1,4 +1,4 @@
-// this comment should be highlighted as error
+// this comment should be highlighted as an error
 
 {
 	unquotedKeyword:'singleQuotedString',
