@@ -2,9 +2,9 @@ Better JSON for VIM
 ===================
 
 *Distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.*  
+![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)  
 Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945) with Rogerz Zhang's [indent script](https://github.com/vim-scripts/vim-json-bundle).  
-[Pathogen-friendly.](https://github.com/tpope/vim-pathogen)
-<br>![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)
+[Pathogen-friendly.](https://github.com/tpope/vim-pathogen)  
 
 Specific customizations
 -----------------------
@@ -17,6 +17,7 @@ Specific customizations
 	* Warn about *decimals* smaller than 1 that don't start with a 0 (so `.1` gives a warning, it should be `0.1`).
 	* Warn about *comments* and *trailing semicolons*.
 	* Warn about *trailing commas* after the last element in arrays or objects.
+* Recognize `.jsonp` file type. In [JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about), the wrapping function call at the beginning and closing semicolon are recognized.
 
 Screenshots
 -----------
