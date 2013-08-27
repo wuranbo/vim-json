@@ -13,6 +13,8 @@ if !exists("main_syntax")
   let main_syntax = 'json'
 endif
 
+syntax match   jsonNoise           /\%(:\|,\)/
+
 " NOTE that for the concealing to work your conceallevel should be set to 2
 
 " Syntax: Strings
@@ -106,6 +108,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonStringSQ        Error
   HiLink jsonNoQuotes        Error
   HiLink jsonQuote           Quote
+  HiLink jsonNoise           Noise
   delcommand HiLink
 endif
 
