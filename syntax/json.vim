@@ -17,9 +17,9 @@ endif
 
 " Syntax: Strings
 if has('conceal')
-   syn region  jsonString oneline matchgroup=Quote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape
+   syn region  jsonString oneline matchgroup=jsonQuote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape
 else
-   syn region  jsonString oneline matchgroup=Quote start=/"/  skip=/\\\\\|\\"/  end=/"/ contains=jsonEscape
+   syn region  jsonString oneline matchgroup=jsonQuote start=/"/  skip=/\\\\\|\\"/  end=/"/ contains=jsonEscape
 endif
 
 " Syntax: JSON does not allow strings with single quotes, unlike JavaScript.
@@ -29,9 +29,9 @@ syn region  jsonStringSQ oneline  start=+'+  skip=+\\\\\|\\"+  end=+'+
 " Separated into a match and region because a region by itself is always greedy
 syn match  jsonKeywordMatch /"[^\"\:]\+"[[:blank:]\r\n]*\:/ contains=jsonKeywordRegion
 if has('conceal')
-   syn region  jsonKeywordRegion matchgroup=Quote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ concealends contained
+   syn region  jsonKeywordRegion matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ concealends contained
 else
-   syn region  jsonKeywordRegion matchgroup=Quote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ contained
+   syn region  jsonKeywordRegion matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ contained
 endif
 
 " Syntax: Escape sequences
@@ -105,6 +105,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonCommaError      Error
   HiLink jsonStringSQ        Error
   HiLink jsonNoQuotes        Error
+  HiLink jsonQuote           Quote
   delcommand HiLink
 endif
 
