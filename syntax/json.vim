@@ -73,7 +73,8 @@ syn match  jsonPadding "\%^[[:blank:]\r\n]*[_$[:alpha:]][_$[:alnum:]]*[[:blank:]
 syn match  jsonPadding ");[[:blank:]\r\n]*\%$"
 
 " Syntax: Boolean
-syn keyword  jsonBoolean   true false
+syn keyword  jsonBooleanTrue true
+syn keyword  jsonBooleanFalse false
 
 " Syntax: Null
 syn keyword  jsonNull      null
@@ -98,6 +99,8 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonNumber          Number
   HiLink jsonBraces          Operator
   HiLink jsonNull            Function
+  HiLink jsonBooleanTrue     jsonBoolean
+  HiLink jsonBooleanFalse    jsonBoolean
   HiLink jsonBoolean         Boolean
   HiLink jsonKeywordRegion   Label
 
