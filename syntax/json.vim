@@ -96,7 +96,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonString          String
   HiLink jsonEscape          Special
   HiLink jsonNumber          Number
-  HiLink jsonBraces          Operator
+  HiLink jsonBraces          Delimiter
   HiLink jsonNull            Function
   HiLink jsonBoolean         Boolean
   HiLink jsonKeywordRegion   Label
