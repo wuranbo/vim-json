@@ -5,6 +5,7 @@ Better JSON for VIM
 ![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)  
 Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945) with Rogerz Zhang's [indent script](https://github.com/vim-scripts/vim-json-bundle).  
 [Pathogen-friendly.](https://github.com/tpope/vim-pathogen)  
+[Vundle-friendly](https://github.com/gmarik/Vundle.vim) too, just [be sure](https://github.com/elzr/vim-json/issues/25) to use the relative path in your `.vimrc` setup: `Plugin 'elzr/vim-json'`.
 
 Specific customizations
 -----------------------
@@ -14,7 +15,7 @@ Specific customizations
 	* *This requires Vim 7.3+.* To disable it add `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
 * Added **folding** of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
 * **JSON-specific warnings** (red highlights):
-	* Warn about *decimals* smaller than 1 that don't start with a 0 (so `.1` gives a warning, it should be `0.1`).
+	* Warn about *decimals* smaller than 1 that don't start with a 0 (`.1` gives a warning, it should be `0.1`).
 	* Warn about *comments* and *trailing semicolons*.
 	* Warn about *trailing commas* after the last element in arrays or objects.
 * Recognize `.jsonp` file type. In [JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about), the wrapping function call at the beginning and closing semicolon are recognized.
@@ -42,6 +43,6 @@ Common problems
 
 Most trouble, little as it is, has to do with Vim's newfangled concealing, which most people aren't yet familiar with, as it was introduced as recently as Vim 7.3+. If you just don't care for concealing you can easily disable it adding `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
 
-Concealing is nice for viewing but when you want to edit it should get out of your way seamlessly so you can see the actual code. Thus the **default behavior** *should* be text shown normally on the line your cursor is at, on all modes (normal, visual, insert). If this isn't the case and the concealing doesn't go away (not even in insert mode), you most likely have **an interfering plugin**. You need to look at your `concealcursor` setting (which can be set through this plugin with `g:vim_json_syntax_concealcursor`). The specially overeager [**indentLine**](https://github.com/Yggdroot/indentLine), plugin would require an additional `let g:indentLine_noConcealCursor=""` in your `.vimrc` as detailed [here]https://github.com/elzr/vim-json/issues/23#issuecomment-40293049().
+Concealing is nice for viewing but when you want to edit it should get out of your way seamlessly so you can see the actual code. Thus the **default behavior** *should* be text shown normally on the line your cursor is at, on all modes (normal, visual, insert). If this isn't the case and the concealing doesn't go away (not even in insert mode), you most likely have **an interfering plugin**. You need to look at your `concealcursor` setting (which can be set through this plugin with `g:vim_json_syntax_concealcursor`). The specially overeager [**indentLine**](https://github.com/Yggdroot/indentLine), plugin would require an additional `let g:indentLine_noConcealCursor=""` in your `.vimrc` as detailed [here](https://github.com/elzr/vim-json/issues/23#issuecomment-40293049).
 
 It's a good idea to test drive with the files `json-test.json` and `jsonp-test.jsonp` first thing.
