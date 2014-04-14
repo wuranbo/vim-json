@@ -16,6 +16,7 @@ Specific customizations
 * **JSON-specific warnings** (red highlights):
 	* Warn about *decimals* smaller than 1 that don't start with a 0 (`.1` gives a warning, it should be `0.1`).
 	* Warn about *comments* and *trailing semicolons*.
+	* Warn about *[missing commas](https://github.com/elzr/vim-json/issues/18)* between elements of an object.
 	* Warn about *trailing commas* after the last element in arrays or objects.
 * Recognize `.jsonp` file type. In [JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about), the wrapping function call at the beginning and closing semicolon are recognized.
 
