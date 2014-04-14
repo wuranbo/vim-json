@@ -6,6 +6,11 @@
 	"decimalCantStartWithPeriod":.1,
 };
 
+{
+  "object1": "missingComma" 
+  "object2": "value"
+}
+
 // normative JSON examples from http://json.org/example.html
 
 {"menu": {
