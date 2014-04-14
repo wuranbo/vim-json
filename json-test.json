@@ -3,11 +3,12 @@
 {
 	unquotedKeyword:'singleQuotedString',
 	'singleQuotedKeyword':true,
-	"decimalCantStartWithPeriod":.1,
+	"decimalCantStartWithPeriod":.1
+	"semicolonAtEndOfThisObject":"trailingComma",
 };
 
 {
-  "object1": "missingComma" 
+  "object1": "missingComma"
   "object2": "value"
 }
 

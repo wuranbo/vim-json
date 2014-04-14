@@ -19,7 +19,7 @@ syntax match   jsonNoise           /\%(:\|,\)/
 
 " Syntax: Strings
 " Separated into a match and region because a region by itself is always greedy
-syn match  jsonStringMatch /"[^\"]\+"[[:blank:]\r\n]*[,}\]]/ contains=jsonString
+syn match  jsonStringMatch /"[^\"]\+"\ze[[:blank:]\r\n]*[,}\]]/ contains=jsonString
 if has('conceal')
 	syn region  jsonString oneline matchgroup=jsonQuote start=/"/  skip=/\\\\\|\\"/  end=/"/ concealends contains=jsonEscape contained
 else
@@ -101,6 +101,7 @@ if version >= 508 || !exists("did_json_syn_inits")
   endif
   HiLink jsonPadding         Operator
   HiLink jsonString          String
+  HiLink jsonTest          Label
   HiLink jsonEscape          Special
   HiLink jsonNumber          Number
   HiLink jsonBraces          Delimiter
