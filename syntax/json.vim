@@ -43,7 +43,7 @@ syn match   jsonEscape    "\\["\\/bfnrt]" contained
 syn match   jsonEscape    "\\u\x\{4}" contained
 
 " Syntax: Numbers
-syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)\=\>"
+syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)\=\>\ze[[:blank:]\r\n]*[,}\]]"
 
 " ERROR WARNINGS **********************************************
 if (g:vim_json_warnings == 1)
@@ -67,7 +67,7 @@ if (g:vim_json_warnings == 1)
 	syn match   jsonTrailingCommaError  ",\_s*[}\]]"
 
 	" Syntax: Watch out for missing commas between elements
-	syn match   jsonMissingCommaError /"\zs\_s\+\ze"/
+	syn match   jsonMissingCommaError /\("\|\d\)\zs\_s\+\ze"/
 endif
 
 " ********************************************** END OF ERROR WARNINGS

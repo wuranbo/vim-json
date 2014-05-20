@@ -3,7 +3,7 @@
 {
 	unquotedKeyword:'singleQuotedString',
 	'singleQuotedKeyword':true,
-	"decimalCantStartWithPeriod":.1
+	"decimalCantStartWithPeriod":.1,
 	"semicolonAtEndOfThisObject":"trailingComma",
 };
 
