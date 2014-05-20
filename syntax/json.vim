@@ -46,29 +46,29 @@ syn match   jsonEscape    "\\u\x\{4}" contained
 syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)\=\>"
 
 " ERROR WARNINGS **********************************************
-"
-" Syntax: Strings should always be enclosed with quotes.
-syn match   jsonNoQuotesError  "\<[[:alpha:]]\+\>"
+if (g:vim_json_warnings == 1)
+	" Syntax: Strings should always be enclosed with quotes.
+	syn match   jsonNoQuotesError  "\<[[:alpha:]]\+\>"
 
-" Syntax: An integer part of 0 followed by other digits is not allowed.
-syn match   jsonNumError  "-\=\<0\d\.\d*\>"
+	" Syntax: An integer part of 0 followed by other digits is not allowed.
+	syn match   jsonNumError  "-\=\<0\d\.\d*\>"
 
-" Syntax: Decimals smaller than one should begin with 0 (so .1 should be 0.1).
-syn match   jsonNumError  "\:\@<=[[:blank:]\r\n]*\zs\.\d\+"
+	" Syntax: Decimals smaller than one should begin with 0 (so .1 should be 0.1).
+	syn match   jsonNumError  "\:\@<=[[:blank:]\r\n]*\zs\.\d\+"
 
-" Syntax: No comments in JSON, see http://stackoverflow.com/questions/244777/can-i-comment-a-json-file
-syn match   jsonCommentError  "//.*"
-syn match   jsonCommentError  "\(/\*\)\|\(\*/\)"
+	" Syntax: No comments in JSON, see http://stackoverflow.com/questions/244777/can-i-comment-a-json-file
+	syn match   jsonCommentError  "//.*"
+	syn match   jsonCommentError  "\(/\*\)\|\(\*/\)"
 
-" Syntax: No semicolons in JSON
-syn match   jsonSemicolonError  ";"
+	" Syntax: No semicolons in JSON
+	syn match   jsonSemicolonError  ";"
 
-" Syntax: No trailing comma after the last element of arrays or objects
-syn match   jsonTrailingCommaError  ",\_s*[}\]]"
+	" Syntax: No trailing comma after the last element of arrays or objects
+	syn match   jsonTrailingCommaError  ",\_s*[}\]]"
 
-" Syntax: Watch out for missing commas between elements
-syn match   jsonMissingCommaError /"\zs\_s\+\ze"/
-
+	" Syntax: Watch out for missing commas between elements
+	syn match   jsonMissingCommaError /"\zs\_s\+\ze"/
+endif
 
 " ********************************************** END OF ERROR WARNINGS
 " Allowances for JSONP: function call at the beginning of the file,
@@ -111,13 +111,15 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonBoolean         Boolean
   HiLink jsonKeyword         Label
 
-  HiLink jsonNumError        Error
-  HiLink jsonCommentError    Error
-  HiLink jsonSemicolonError  Error
-  HiLink jsonTrailingCommaError     Error
-  HiLink jsonMissingCommaError      Error
-  HiLink jsonStringSQError        	Error
-  HiLink jsonNoQuotesError        	Error
+	if (g:vim_json_warnings == 1)
+	  HiLink jsonNumError        Error
+	  HiLink jsonCommentError    Error
+	  HiLink jsonSemicolonError  Error
+	  HiLink jsonTrailingCommaError     Error
+	  HiLink jsonMissingCommaError      Error
+	  HiLink jsonStringSQError        	Error
+	  HiLink jsonNoQuotesError        	Error
+  endif
   HiLink jsonQuote           Quote
   HiLink jsonNoise           Noise
   delcommand HiLink

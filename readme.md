@@ -4,7 +4,7 @@ Better JSON for VIM
 *Distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.*  
 ![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)  
 Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945) with Rogerz Zhang's [indent script](https://github.com/vim-scripts/vim-json-bundle).  
-[Pathogen-friendly.](https://github.com/tpope/vim-pathogen) [Vundle-friendly](https://github.com/gmarik/Vundle.vim) too, just [be sure](https://github.com/elzr/vim-json/issues/25) to use the relative path in your `.vimrc` setup: `Plugin 'elzr/vim-json'`.
+[Pathogen-friendly.](https://github.com/tpope/vim-pathogen) [Vundle-friendly too](https://github.com/elzr/vim-json/issues/25).
 
 Specific customizations
 -----------------------
@@ -14,10 +14,12 @@ Specific customizations
 	* *This requires Vim 7.3+.* To disable it add `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
 * Added **folding** of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
 * **JSON-specific warnings** (red highlights):
+	* Warn about single-quoted keywords.
 	* Warn about *decimals* smaller than 1 that don't start with a 0 (`.1` gives a warning, it should be `0.1`).
 	* Warn about *comments* and *trailing semicolons*.
 	* Warn about *[missing commas](https://github.com/elzr/vim-json/issues/18)* between elements of an object.
 	* Warn about *trailing commas* after the last element in arrays or objects.
+	* (This can be turned off with a `let g:vim_json_warnings=0` in your `vimrc`.) 
 * Recognize `.jsonp` file type. In [JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about), the wrapping function call at the beginning and closing semicolon are recognized.
 
 Screenshots
