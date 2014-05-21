@@ -1,6 +1,7 @@
 Better JSON for VIM
 ===================
 
+
 *Distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.*  
 ![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)  
 Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945) with Rogerz Zhang's [indent script](https://github.com/vim-scripts/vim-json-bundle).  
@@ -41,7 +42,10 @@ Here's 2 compelling reasons:
 2. **Distinct highlighting for keywords.** JSON is an extremely lightweight data format but at its core lies an inescapable conceptual distinction: there are keywords and there are values. There's nothing much to the format besides that, so we might as well display keywords and values differently. This is something that gets lost with Javascript-inspired syntax highlighters, which see keywords as just another string since JSON requires them double quoted. So JSON files remain an impenetrable, indistinct wall of text.
 
 Common problems
-------------
+---------------
+
+This is the expected behavior:  
+![showcase](http://i.imgur.com/cmL1GNc.gif)
 
 Most trouble, little as it is, has to do with Vim's newfangled concealing, which most people aren't yet familiar with, as it was introduced as recently as Vim 7.3+. If you just don't care for concealing you can easily disable it adding `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
 
