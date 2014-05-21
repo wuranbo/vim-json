@@ -11,17 +11,17 @@ Specific customizations
 -----------------------
 
 * Added distinct **highlighting** for keywords vs values! (This is what made me start this plugin.)
-* Added **concealing** of double quotes, for a minimalist [CoffeeScript](http://coffeescript.org/)-inspired look. 
+* Added **concealing** of double quotes, for a minimalist [CoffeeScript](http://coffeescript.org/)-inspired look ([CSON](https://github.com/bevry/cson)!). 
 	* *This requires Vim 7.3+.* To disable it add `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
 * Added **folding** of `{...}` and `[...]` blocks. To enable it `:setlocal foldmethod=syntax` (do it permanently on the `ftplugin/json.vim` file).
 * **JSON-specific warnings** (red highlights):
-	* Warn about single-quoted keywords.
+	* Warn about *no-quotes* in keywords and *single-quotes* in keywords and values.
 	* Warn about *decimals* smaller than 1 that don't start with a 0 (`.1` gives a warning, it should be `0.1`).
-	* Warn about *comments* and *trailing semicolons*.
+	* Warn about *comments* `//` and *trailing semicolons* `;`.
 	* Warn about *[missing commas](https://github.com/elzr/vim-json/issues/18)* between elements of an object.
 	* Warn about *trailing commas* after the last element in arrays or objects.
-	* (This can be turned off with a `let g:vim_json_warnings=0` in your `vimrc`.) 
-* Recognize `.jsonp` file type. In [JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about), the wrapping function call at the beginning and closing semicolon are recognized.
+	* (All warnings can be turned off with a `let g:vim_json_warnings=0` in your `vimrc`.) 
+* Recognize `.jsonp` file type. In [JSONP](http://stackoverflow.com/questions/2067472/what-is-jsonp-all-about), the wrapping function call at the beginning and the closing semicolon are recognized.
 
 Screenshots
 -----------
@@ -44,7 +44,7 @@ Here's 2 compelling reasons:
 Common problems
 ---------------
 
-This is the expected behavior:  
+This is the expected behavior of the plugin:  
 ![showcase](http://i.imgur.com/cmL1GNc.gif)
 
 Most trouble, little as it is, has to do with Vim's newfangled concealing, which most people aren't yet familiar with, as it was introduced as recently as Vim 7.3+. If you just don't care for concealing you can easily disable it adding `let g:vim_json_syntax_conceal = 0` to your `.vimrc`.
