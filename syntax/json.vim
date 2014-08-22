@@ -68,7 +68,10 @@ if (!exists("g:vim_json_warnings") || g:vim_json_warnings==1)
 	syn match   jsonTrailingCommaError  ",\_s*[}\]]"
 
 	" Syntax: Watch out for missing commas between elements
-	syn match   jsonMissingCommaError /\("\|\d\)\zs\_s\+\ze"/
+	syn match   jsonMissingCommaError /\("\|\]\|\d\)\zs\_s\+\ze"/
+	syn match   jsonMissingCommaError /\(\]\|\}\)\_s\+\ze"/ "arrays/objects as values
+	syn match   jsonMissingCommaError /}\_s\+\ze{/ "objects as elements in an array
+	syn match   jsonMissingCommaError /\(true\|false\)\_s\+\ze"/ "true/false as value
 endif
 
 " ********************************************** END OF ERROR WARNINGS
@@ -80,15 +83,14 @@ syn match  jsonPadding "\%^[[:blank:]\r\n]*[_$[:alpha:]][_$[:alnum:]]*[[:blank:]
 syn match  jsonPadding ");[[:blank:]\r\n]*\%$"
 
 " Syntax: Boolean
-syn keyword  jsonBooleanTrue true
-syn keyword  jsonBooleanFalse false
+syn match  jsonBoolean /\(true\|false\)\(\_s\+\ze"\)\@!/
 
 " Syntax: Null
 syn keyword  jsonNull      null
 
 " Syntax: Braces
-syn region  jsonFold matchgroup=jsonBraces start="{" end="}" transparent fold
-syn region  jsonFold matchgroup=jsonBraces start="\[" end="]" transparent fold
+syn region  jsonFold matchgroup=jsonBraces start="{" end=/}\(\_s\+\ze\("\|{\)\)\@!/ transparent fold
+syn region  jsonFold matchgroup=jsonBraces start="\[" end=/]\(\_s\+\ze"\)\@!/ transparent fold
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
@@ -107,8 +109,6 @@ if version >= 508 || !exists("did_json_syn_inits")
   HiLink jsonNumber          Number
   HiLink jsonBraces          Delimiter
   HiLink jsonNull            Function
-  HiLink jsonBooleanTrue     jsonBoolean
-  HiLink jsonBooleanFalse    jsonBoolean
   HiLink jsonBoolean         Boolean
   HiLink jsonKeyword         Label
 
