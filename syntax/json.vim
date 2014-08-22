@@ -31,7 +31,7 @@ syn region  jsonStringSQError oneline  start=+'+  skip=+\\\\\|\\"+  end=+'+
 
 " Syntax: JSON Keywords
 " Separated into a match and region because a region by itself is always greedy
-syn match  jsonKeywordMatch /"[^\"]\+"[[:blank:]\r\n]*\:/ contains=jsonKeyword
+syn match  jsonKeywordMatch /"\([^"]\|\\\"\)\+"[[:blank:]\r\n]*\:/ contains=jsonKeyword
 if has('conceal')
    syn region  jsonKeyword matchgroup=jsonQuote start=/"/  end=/"\ze[[:blank:]\r\n]*\:/ concealends contained
 else
@@ -48,7 +48,7 @@ syn match   jsonNumber    "-\=\<\%(0\|[1-9]\d*\)\%(\.\d\+\)\=\%([eE][-+]\=\d\+\)
 " ERROR WARNINGS **********************************************
 if (!exists("g:vim_json_warnings") || g:vim_json_warnings==1)
 	" Syntax: Strings should always be enclosed with quotes.
-	syn match   jsonNoQuotesError  "\<[[:alpha:]]\+\>"
+	syn match   jsonNoQuotesError  "\<[[:alnum:]]\+\>"
 	syn match   jsonTripleQuotesError  /"""/
 
 	" Syntax: An integer part of 0 followed by other digits is not allowed.
