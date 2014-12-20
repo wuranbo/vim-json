@@ -1,7 +1,11 @@
 " Vim syntax file
 " Language:	JSON
 " Maintainer:	Eli Parra <eli@elzr.com> https://github.com/elzr/vim-json
-" Last Change:	2014-08-24 HiLink to hi def link
+" Last Change:	2014-12-20 Load ftplugin/json.vim
+
+" Reload the definition of g:vim_json_syntax_conceal
+" see https://github.com/elzr/vim-json/issues/42
+runtime! ftplugin/json.vim
 
 if !exists("main_syntax")
   if version < 600
