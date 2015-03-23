@@ -93,3 +93,5 @@
   "object1": true
   "object2": 2
 }
+
+//this file is deliberately mis-indented, try gg=G to indent it properly

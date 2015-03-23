@@ -42,7 +42,7 @@ let s:block_regex = '\%({\)\s*\%(|\%([*@]\=\h\w*,\=\s*\)\%(,\s*[*@]\=\h\w*\)*|\)
 
 " Check if the character at lnum:col is inside a string.
 function s:IsInString(lnum, col)
-  return synIDattr(synID(a:lnum, a:col, 1), 'name') == jsonString
+  return synIDattr(synID(a:lnum, a:col, 1), 'name') == "jsonString"
 endfunction
 
 " Find line above 'lnum' that isn't empty, or in a string.
