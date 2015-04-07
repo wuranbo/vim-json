@@ -55,4 +55,5 @@ It's a good idea to test drive with the files `json-test.json` and `jsonp-test.j
 
 Other recommended software
 --------------------------
-[JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa): Chrome extension for printing JSON and JSONP nicely when you visit it 'directly' in a browser tab.
+* [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa): Chrome extension for printing JSON and JSONP nicely when you visit it 'directly' in a browser tab.
+* [Convert JSON to YAML](http://www.json2yaml.com/): side by side, real-time conversion of the "fat and rigid" JSON to the "skinny and flexible" YAML.
