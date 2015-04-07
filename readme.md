@@ -1,8 +1,10 @@
+
+
 Better JSON for VIM
 ===================
 
 *Distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing.*  
-![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)  
+![JSON syntax coloring](https://cloud.githubusercontent.com/assets/183877/7018898/98e428e0-dccf-11e4-9ab8-c554b3556155.jpg)
 Customization of Jeroen Ruigrok van der Werven's [vim-json highlighting script](http://www.vim.org/scripts/script.php?script_id=1945) with Rogerz Zhang's [indent script](https://github.com/vim-scripts/vim-json-bundle).  
 [Pathogen-friendly.](https://github.com/tpope/vim-pathogen) [Vundle-friendly too](https://github.com/elzr/vim-json/issues/25).
 
@@ -26,11 +28,11 @@ Specific customizations
 Screenshots
 -----------
 
-**No syntax coloring**: wall of text.<br>![No syntax coloring](http://farm8.staticflickr.com/7085/7370791592_fe85355c89.jpg)
+**No syntax coloring**: wall of text.<br>![No syntax coloring](https://cloud.githubusercontent.com/assets/183877/7018892/8c9965a0-dccf-11e4-9790-0e815605e3a9.jpg)
 
-**Javascript (or for that matter, the standard json.vim) syntax coloring**: Barely an improvement from no syntax coloring.<br>![Javascript syntax coloring](http://farm8.staticflickr.com/7076/7370791528_664eb2da6d.jpg)
+**Javascript (or for that matter, the standard json.vim) syntax coloring**: Barely an improvement from no syntax coloring.<br>![Javascript syntax coloring](https://cloud.githubusercontent.com/assets/183877/7018893/906e67c0-dccf-11e4-89b1-11c3cfe9e2ef.jpg)
 
-**Better JSON syntax coloring**: a more meaningful, distinct and elegant presentation.<br>![JSON syntax coloring](http://farm8.staticflickr.com/7234/7185560283_102f6b753d.jpg)
+**Better JSON syntax coloring**: a more meaningful, distinct and elegant presentation.<br>![JSON syntax coloring](https://cloud.githubusercontent.com/assets/183877/7018894/95fd2c1c-dccf-11e4-8cbc-0f6588f9d060.jpg)
 
 Why use separate JSON highlighting instead of just Javascript?
 --------------------------------------------------------------
