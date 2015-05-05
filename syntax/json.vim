@@ -85,6 +85,13 @@ endif
 syn match  jsonPadding "\%^[[:blank:]\r\n]*[_$[:alpha:]][_$[:alnum:]]*[[:blank:]\r\n]*("
 syn match  jsonPadding ");[[:blank:]\r\n]*\%$"
 
+" ********Avro's idl syntax*************
+" thanks https://github.com/dln/avro-vim
+syn keyword avroKeyword java-class namespace order
+syn keyword avroKeyword error throws
+syn keyword avroBasicTypes boolean bytes double fixed float int long null string void
+syn keyword avroStructure array enum map union
+
 " Syntax: Boolean
 syn match  jsonBoolean /\(true\|false\)\(\_s\+\ze"\)\@!/
 
@@ -97,6 +104,9 @@ syn region  jsonFold matchgroup=jsonBraces start="\[" end=/]\(\_s\+\ze"\)\@!/ tr
 
 " Define the default highlighting.
 if version >= 508 || !exists("did_json_syn_inits")
+  hi def link avroKeyword   Label
+  hi def link avroBasicTypes Delimiter
+  hi def link avroStructure Delimiter
   hi def link jsonPadding		Operator
   hi def link jsonString		String
   hi def link jsonTest			Label
